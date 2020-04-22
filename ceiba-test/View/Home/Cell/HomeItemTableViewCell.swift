@@ -46,9 +46,18 @@ class HomeItemTableViewCell: UITableViewCell {
     }
     
     func setMapView(geo: Geo) {
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        let initialLocation = CLLocation(latitude: geo.lat, longitude: geo.lng)
         mapView.centerToLocation(initialLocation)
+        mapView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 32, height: profileView.bounds.height)
         mapContentView.addSubview(mapView)
+    }
+    
+    func setPin(geo: Geo) {
+        let pin = MKPointAnnotation()
+        pin.coordinate = CLLocationCoordinate2D(latitude: geo.lat, longitude: geo.lng)
+        pin.title = "Burj Khalifa"
+        pin.subtitle = "The tallest buildiing in the world."
+        mapView.addAnnotation(pin)
     }
     
     override func prepareForReuse() {
