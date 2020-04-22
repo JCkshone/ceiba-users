@@ -1,6 +1,0 @@
-framework module Pods_ceiba_test_ceiba_testUITests {
-  umbrella header "Pods-ceiba-test-ceiba-testUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
