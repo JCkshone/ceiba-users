@@ -49,7 +49,6 @@ extension HomeVC {
     func setupTableView() {
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: Constants.cellName, bundle: Bundle.main), forCellReuseIdentifier: Constants.cellName)
-        tableView.reloadData()
     }
 }
 

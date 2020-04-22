@@ -12,11 +12,19 @@ class UserPostVC: UIViewController {
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    private typealias postCell = PostItemTableViewCell
     var viewModel: UserPostViewModel = UserPostViewModel()
+    
+    
+    struct Constants {
+        static let cellName = "PostItemTableViewCell"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupTableView()
+        initViewModel()
     }
 
     @IBAction func backAction(_ sender: Any) {
@@ -37,6 +45,14 @@ extension UserPostVC {
     func setupView() {
         userName.text = viewModel.user?.name
     }
+    
+    func setupTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
+        tableView.register(UINib(nibName: Constants.cellName, bundle: Bundle.main), forCellReuseIdentifier: Constants.cellName)
+    }
 }
 
 extension UserPostVC: UITableViewDelegate, UITableViewDataSource {
@@ -45,6 +61,10 @@ extension UserPostVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName, for: indexPath) as! postCell
+        let post = viewModel.posts[indexPath.row]
+        cell.title = post.title
+        cell.itemDescription = post.body
+        return cell
     }
 }
