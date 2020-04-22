@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Lottie
 
 class Lottie: UIView {
+    @IBOutlet weak var animationContent: UIView!
     
     struct Constants {
         static let xibName = "Lottie"
@@ -32,5 +34,13 @@ class Lottie: UIView {
             contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         }
     }
-
+    
+    func setupAnimation(_ animationName: String){
+        let checkMarkAnimation = AnimationView(name: animationName)
+        checkMarkAnimation.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.bounds.height)
+        animationContent.contentMode = .scaleAspectFit
+        animationContent.addSubview(checkMarkAnimation)
+        checkMarkAnimation.loopMode = .loop
+        checkMarkAnimation.play()
+    }
 }

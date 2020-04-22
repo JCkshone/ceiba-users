@@ -29,6 +29,9 @@
 		490ECAF9245011B1003FE804 /* HomeItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490ECAF7245011B1003FE804 /* HomeItemTableViewCell.xib */; };
 		490ECAFB245011D5003FE804 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECAFA245011D5003FE804 /* Lottie.swift */; };
 		490ECAFD245011E4003FE804 /* Lottie.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490ECAFC245011E4003FE804 /* Lottie.xib */; };
+		490ECAFF245024AD003FE804 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECAFE245024AD003FE804 /* UserModel.swift */; };
+		490ECB022450254C003FE804 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECB012450254C003FE804 /* HttpManager.swift */; };
+		490ECB0424502A3D003FE804 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECB0324502A3D003FE804 /* UserViewModel.swift */; };
 		75DC014613B025F74CEE771E /* Pods_ceiba_test_ceiba_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AEC6879E530B13B13D95F9 /* Pods_ceiba_test_ceiba_testUITests.framework */; };
 		B8225C7625B991ECA7814068 /* Pods_ceiba_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2A37F355AA933A5EBEF574 /* Pods_ceiba_test.framework */; };
 		E3784BFF21F72D8718F2ED09 /* Pods_ceiba_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0765CDA4FB3B6949F95362BC /* Pods_ceiba_testTests.framework */; };
@@ -84,6 +87,9 @@
 		490ECAF7245011B1003FE804 /* HomeItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeItemTableViewCell.xib; sourceTree = "<group>"; };
 		490ECAFA245011D5003FE804 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
 		490ECAFC245011E4003FE804 /* Lottie.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Lottie.xib; sourceTree = "<group>"; };
+		490ECAFE245024AD003FE804 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		490ECB012450254C003FE804 /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
+		490ECB0324502A3D003FE804 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		557135EA99ACB939EB29B5E2 /* Pods-ceiba-test-ceiba-testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-test-ceiba-testUITests.debug.xcconfig"; path = "Target Support Files/Pods-ceiba-test-ceiba-testUITests/Pods-ceiba-test-ceiba-testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E65D743C178EBD7C085A538 /* Pods-ceiba-test-ceiba-testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-test-ceiba-testUITests.release.xcconfig"; path = "Target Support Files/Pods-ceiba-test-ceiba-testUITests/Pods-ceiba-test-ceiba-testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		647115965FC3FF9FBDA92D4F /* Pods-ceiba-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-testTests.release.xcconfig"; path = "Target Support Files/Pods-ceiba-testTests/Pods-ceiba-testTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 		490ECAA8244FFACB003FE804 /* ceiba-test */ = {
 			isa = PBXGroup;
 			children = (
+				490ECB00245024B3003FE804 /* Manager */,
 				490ECAF324500B1B003FE804 /* Model */,
 				490ECADA245007DC003FE804 /* ViewModel */,
 				490ECAD9245007D3003FE804 /* View */,
@@ -187,6 +194,7 @@
 		490ECADA245007DC003FE804 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				490ECB0324502A3D003FE804 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 		490ECAF324500B1B003FE804 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				490ECAFE245024AD003FE804 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +250,14 @@
 				490ECAF7245011B1003FE804 /* HomeItemTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		490ECB00245024B3003FE804 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				490ECB012450254C003FE804 /* HttpManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		D3D238AE0536ED31F6B5BC05 /* Pods */ = {
@@ -518,9 +535,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				490ECAAE244FFACB003FE804 /* HomeVC.swift in Sources */,
+				490ECB0424502A3D003FE804 /* UserViewModel.swift in Sources */,
+				490ECB022450254C003FE804 /* HttpManager.swift in Sources */,
 				490ECAF8245011B1003FE804 /* HomeItemTableViewCell.swift in Sources */,
 				490ECAFB245011D5003FE804 /* Lottie.swift in Sources */,
 				490ECAAA244FFACB003FE804 /* AppDelegate.swift in Sources */,
+				490ECAFF245024AD003FE804 /* UserModel.swift in Sources */,
 				490ECAAC244FFACB003FE804 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
