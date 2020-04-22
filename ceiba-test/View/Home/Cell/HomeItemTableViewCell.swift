@@ -21,6 +21,8 @@ class HomeItemTableViewCell: UITableViewCell {
     
     private var animation: Lottie = Lottie()
     private var mapView: MKMapView = MKMapView()
+    var userId: Int = 0
+    var handleShowMore: ((_ userId: Int)->())?
     
     var animationName: String = "" {
         didSet {
@@ -73,7 +75,9 @@ class HomeItemTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         rootContentView.addShadow()
-        // Initialization code
+        showMore.addAction(for: .touchUpInside) {
+            self.handleShowMore?(self.userId)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

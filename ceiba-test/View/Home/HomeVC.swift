@@ -35,6 +35,14 @@ class HomeVC: UIViewController {
         
         viewModel.loadUsers()
     }
+    
+    func goToPost(of userId: Int) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserPostVC") as! UserPostVC
+        guard let user = viewModel.getUser(from: userId) else { return }
+        vc.modalPresentationStyle = .fullScreen
+        vc.viewModel.user = user
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension HomeVC {
@@ -54,13 +62,14 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName, for: indexPath) as! homeCell
         let user = viewModel.users[indexPath.row]
         cell.selectionStyle = .none
+        cell.userId = user.id
         cell.name = user.name
         cell.phone = user.phone
         cell.email = user.email
         cell.setMapView(geo: Geo(lat: "21.282778", lng: "-157.829444"))
         
-        cell.showMore.addAction(for: .touchUpInside) {
-            
+        cell.handleShowMore = { [unowned self] userId in
+            self.goToPost(of: userId)
         }
         
         return cell

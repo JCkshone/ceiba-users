@@ -24,4 +24,11 @@ class UserViewModel {
         }
     }
     
+    func getUser(from userId: Int) -> User? {
+        let user = users.first { item -> Bool in
+            return item.id == userId
+        }
+        return user ?? nil
+    }
+    
 }

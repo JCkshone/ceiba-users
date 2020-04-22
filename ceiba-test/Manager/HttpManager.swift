@@ -30,4 +30,12 @@ class HttpManager {
             handledResponse(data)
         }
     }
+    
+    func getPost(by path: String, handledResponse: @escaping (_ data: [Post])->()) {
+        let request = AF.request("\(Constant.baseUrl)\(path)")
+        request.responseDecodable(of: [Post].self) { response in
+            guard let data = response.value else {return}
+            handledResponse(data)
+        }
+    }
 }
