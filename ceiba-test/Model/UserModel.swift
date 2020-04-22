@@ -59,8 +59,8 @@ struct Company: Decodable {
 }
 
 struct Geo: Decodable {
-    let lat: Double
-    let lng: Double
+    let lat: String
+    let lng: String
     
     enum CondingKeys: String, CodingKey {
         case lat

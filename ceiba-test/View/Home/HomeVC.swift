@@ -23,6 +23,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isHidden = true
         setupTableView()
         setupViewModel()
     }
@@ -56,7 +57,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.name = user.name
         cell.phone = user.phone
         cell.email = user.email
-        cell.setMapView(geo: Geo(lat: 0.0, lng: 0.0))
+        cell.setMapView(geo: Geo(lat: "21.282778", lng: "-157.829444"))
+        
+        cell.showMore.addAction(for: .touchUpInside) {
+            
+        }
+        
         return cell
     }
     

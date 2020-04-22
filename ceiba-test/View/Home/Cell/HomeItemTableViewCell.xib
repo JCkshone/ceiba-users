@@ -67,6 +67,13 @@
                                 <color key="textColor" red="0.039215686270000001" green="0.10980392160000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEb-9T-Kp0">
+                                <rect key="frame" x="226" y="266.5" width="74" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Ver mas">
+                                    <color key="titleColor" red="0.039215686270000001" green="0.10980392160000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -76,12 +83,14 @@
                             <constraint firstAttribute="trailing" secondItem="mDf-pz-R0L" secondAttribute="trailing" id="3fE-JO-oNn"/>
                             <constraint firstItem="Xtr-I0-wg7" firstAttribute="leading" secondItem="4an-64-dpH" secondAttribute="trailing" constant="8" id="68Y-J3-09F"/>
                             <constraint firstItem="xN2-ht-sLi" firstAttribute="leading" secondItem="aTo-sH-TRn" secondAttribute="trailing" constant="8" id="8GT-ro-3l8"/>
+                            <constraint firstItem="aEb-9T-Kp0" firstAttribute="top" secondItem="yiA-hL-vv7" secondAttribute="bottom" constant="26" id="9G1-gW-PMC"/>
                             <constraint firstItem="aTo-sH-TRn" firstAttribute="leading" secondItem="3nj-gX-1aU" secondAttribute="leading" constant="16" id="C0b-8O-GYF"/>
                             <constraint firstItem="yiA-hL-vv7" firstAttribute="leading" secondItem="3nj-gX-1aU" secondAttribute="leading" constant="16" id="CE0-Bu-beg"/>
                             <constraint firstItem="YjP-Lw-F3O" firstAttribute="top" secondItem="3nj-gX-1aU" secondAttribute="top" id="GEh-UO-Qe2"/>
                             <constraint firstAttribute="trailing" secondItem="yiA-hL-vv7" secondAttribute="trailing" constant="16" id="MMY-4D-Xcv"/>
                             <constraint firstItem="aTo-sH-TRn" firstAttribute="top" secondItem="4an-64-dpH" secondAttribute="bottom" constant="3" id="N2X-oJ-M60"/>
                             <constraint firstItem="mDf-pz-R0L" firstAttribute="leading" secondItem="3nj-gX-1aU" secondAttribute="leading" id="YC7-ES-32I"/>
+                            <constraint firstAttribute="trailing" secondItem="aEb-9T-Kp0" secondAttribute="trailing" constant="8" id="deK-R7-3c3"/>
                             <constraint firstItem="mDf-pz-R0L" firstAttribute="top" secondItem="3nj-gX-1aU" secondAttribute="top" id="jTs-sZ-fb0"/>
                             <constraint firstAttribute="trailing" secondItem="xN2-ht-sLi" secondAttribute="trailing" constant="16" id="lf6-zt-Qn0"/>
                             <constraint firstItem="yiA-hL-vv7" firstAttribute="top" secondItem="YjP-Lw-F3O" secondAttribute="bottom" constant="8" id="pJK-Mv-iM8"/>
@@ -112,6 +121,7 @@
                 <outlet property="phoneLabel" destination="Xtr-I0-wg7" id="yoh-Ls-ZAu"/>
                 <outlet property="profileView" destination="YjP-Lw-F3O" id="mCh-bN-ezj"/>
                 <outlet property="rootContentView" destination="3nj-gX-1aU" id="179-q3-Uhg"/>
+                <outlet property="showMore" destination="aEb-9T-Kp0" id="dzo-fI-CpI"/>
             </connections>
             <point key="canvasLocation" x="146.37681159420291" y="119.19642857142857"/>
         </tableViewCell>

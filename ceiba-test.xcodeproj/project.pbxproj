@@ -34,6 +34,8 @@
 		490ECB0424502A3D003FE804 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECB0324502A3D003FE804 /* UserViewModel.swift */; };
 		490ECB07245031A9003FE804 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECB06245031A9003FE804 /* UIView.swift */; };
 		490ECB09245035A5003FE804 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECB08245035A5003FE804 /* MKMapView.swift */; };
+		490ECB0B24503FF3003FE804 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECB0A24503FF3003FE804 /* UIControl.swift */; };
+		490ECB0E245041B7003FE804 /* UserPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECB0D245041B7003FE804 /* UserPostVC.swift */; };
 		75DC014613B025F74CEE771E /* Pods_ceiba_test_ceiba_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AEC6879E530B13B13D95F9 /* Pods_ceiba_test_ceiba_testUITests.framework */; };
 		B8225C7625B991ECA7814068 /* Pods_ceiba_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2A37F355AA933A5EBEF574 /* Pods_ceiba_test.framework */; };
 		E3784BFF21F72D8718F2ED09 /* Pods_ceiba_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0765CDA4FB3B6949F95362BC /* Pods_ceiba_testTests.framework */; };
@@ -94,6 +96,8 @@
 		490ECB0324502A3D003FE804 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		490ECB06245031A9003FE804 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		490ECB08245035A5003FE804 /* MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
+		490ECB0A24503FF3003FE804 /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
+		490ECB0D245041B7003FE804 /* UserPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostVC.swift; sourceTree = "<group>"; };
 		557135EA99ACB939EB29B5E2 /* Pods-ceiba-test-ceiba-testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-test-ceiba-testUITests.debug.xcconfig"; path = "Target Support Files/Pods-ceiba-test-ceiba-testUITests/Pods-ceiba-test-ceiba-testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E65D743C178EBD7C085A538 /* Pods-ceiba-test-ceiba-testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-test-ceiba-testUITests.release.xcconfig"; path = "Target Support Files/Pods-ceiba-test-ceiba-testUITests/Pods-ceiba-test-ceiba-testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		647115965FC3FF9FBDA92D4F /* Pods-ceiba-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-testTests.release.xcconfig"; path = "Target Support Files/Pods-ceiba-testTests/Pods-ceiba-testTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 		490ECAD9245007D3003FE804 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				490ECB0C24504196003FE804 /* Post */,
 				490ECADB2450096E003FE804 /* Lottie */,
 				490ECAF424500C82003FE804 /* Home */,
 				490ECAF124500A3F003FE804 /* Main.storyboard */,
@@ -270,8 +275,17 @@
 			children = (
 				490ECB06245031A9003FE804 /* UIView.swift */,
 				490ECB08245035A5003FE804 /* MKMapView.swift */,
+				490ECB0A24503FF3003FE804 /* UIControl.swift */,
 			);
 			path = HelperViews;
+			sourceTree = "<group>";
+		};
+		490ECB0C24504196003FE804 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				490ECB0D245041B7003FE804 /* UserPostVC.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		D3D238AE0536ED31F6B5BC05 /* Pods */ = {
@@ -556,6 +570,8 @@
 				490ECAAA244FFACB003FE804 /* AppDelegate.swift in Sources */,
 				490ECAFF245024AD003FE804 /* UserModel.swift in Sources */,
 				490ECB07245031A9003FE804 /* UIView.swift in Sources */,
+				490ECB0B24503FF3003FE804 /* UIControl.swift in Sources */,
+				490ECB0E245041B7003FE804 /* UserPostVC.swift in Sources */,
 				490ECAAC244FFACB003FE804 /* SceneDelegate.swift in Sources */,
 				490ECB09245035A5003FE804 /* MKMapView.swift in Sources */,
 			);

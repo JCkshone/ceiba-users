@@ -17,6 +17,7 @@ class HomeItemTableViewCell: UITableViewCell {
     @IBOutlet fileprivate weak var emailLabel: UILabel!
     @IBOutlet weak var rootContentView: UIView!
     @IBOutlet weak var mapContentView: UIView!
+    @IBOutlet weak var showMore: UIButton!
     
     private var animation: Lottie = Lottie()
     private var mapView: MKMapView = MKMapView()
@@ -46,17 +47,20 @@ class HomeItemTableViewCell: UITableViewCell {
     }
     
     func setMapView(geo: Geo) {
-        let initialLocation = CLLocation(latitude: geo.lat, longitude: geo.lng)
+        guard let lat = Double(geo.lat), let lng = Double(geo.lng) else { return }
+        let initialLocation = CLLocation(latitude: lat, longitude: lng)
         mapView.centerToLocation(initialLocation)
         mapView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 32, height: profileView.bounds.height)
         mapContentView.addSubview(mapView)
+        
+        setPin(lat: lat, lng: lng)
     }
     
-    func setPin(geo: Geo) {
+    func setPin(lat: Double, lng: Double) {
         let pin = MKPointAnnotation()
-        pin.coordinate = CLLocationCoordinate2D(latitude: geo.lat, longitude: geo.lng)
-        pin.title = "Burj Khalifa"
-        pin.subtitle = "The tallest buildiing in the world."
+        pin.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        pin.title = name
+        pin.subtitle = email
         mapView.addAnnotation(pin)
     }
     
