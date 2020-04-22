@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class HomeItemTableViewCell: UITableViewCell {
     
@@ -14,8 +15,11 @@ class HomeItemTableViewCell: UITableViewCell {
     @IBOutlet fileprivate weak var nameLabel: UILabel!
     @IBOutlet fileprivate weak var phoneLabel: UILabel!
     @IBOutlet fileprivate weak var emailLabel: UILabel!
+    @IBOutlet weak var rootContentView: UIView!
+    @IBOutlet weak var mapContentView: UIView!
     
     private var animation: Lottie = Lottie()
+    private var mapView: MKMapView = MKMapView()
     
     var animationName: String = "" {
         didSet {
@@ -41,18 +45,21 @@ class HomeItemTableViewCell: UITableViewCell {
        }
     }
     
+    func setMapView(geo: Geo) {
+        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        mapView.centerToLocation(initialLocation)
+        mapContentView.addSubview(mapView)
+    }
+    
     override func prepareForReuse() {
         emailLabel.text = ""
         phoneLabel.text = ""
         nameLabel.text = ""
     }
     
-    override func layoutSubviews() {
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
+        rootContentView.addShadow()
         // Initialization code
     }
 

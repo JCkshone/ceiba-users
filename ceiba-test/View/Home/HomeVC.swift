@@ -38,6 +38,7 @@ class HomeVC: UIViewController {
 
 extension HomeVC {
     func setupTableView() {
+        tableView.separatorStyle = .none
         tableView.register(UINib(nibName: Constants.cellName, bundle: Bundle.main), forCellReuseIdentifier: Constants.cellName)
         tableView.reloadData()
     }
@@ -55,6 +56,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.name = user.name
         cell.phone = user.phone
         cell.email = user.email
+        cell.setMapView(geo: Geo(lat: 0.0, lng: 0.0))
         return cell
     }
     
