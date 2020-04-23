@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4904E386245134D200065AAE /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E385245134D200065AAE /* UITextField.swift */; };
+		4904E3892451483C00065AAE /* HeaderProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E3882451483C00065AAE /* HeaderProfile.swift */; };
+		4904E38B245148E700065AAE /* HeaderProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4904E38A245148E700065AAE /* HeaderProfile.xib */; };
 		490ECAAA244FFACB003FE804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECAA9244FFACB003FE804 /* AppDelegate.swift */; };
 		490ECAAC244FFACB003FE804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECAAB244FFACB003FE804 /* SceneDelegate.swift */; };
 		490ECAAE244FFACB003FE804 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECAAD244FFACB003FE804 /* HomeVC.swift */; };
@@ -69,6 +71,8 @@
 		44DF2C76118BC9582D5CC7EC /* Pods-ceiba-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-testTests.debug.xcconfig"; path = "Target Support Files/Pods-ceiba-testTests/Pods-ceiba-testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4904BD677352146BD68C11F1 /* Pods-ceiba-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-test.release.xcconfig"; path = "Target Support Files/Pods-ceiba-test/Pods-ceiba-test.release.xcconfig"; sourceTree = "<group>"; };
 		4904E385245134D200065AAE /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		4904E3882451483C00065AAE /* HeaderProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProfile.swift; sourceTree = "<group>"; };
+		4904E38A245148E700065AAE /* HeaderProfile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderProfile.xib; sourceTree = "<group>"; };
 		490ECAA6244FFACB003FE804 /* ceiba-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ceiba-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		490ECAA9244FFACB003FE804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		490ECAAB244FFACB003FE804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4904E387245146FD00065AAE /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4904E3882451483C00065AAE /* HeaderProfile.swift */,
+				4904E38A245148E700065AAE /* HeaderProfile.xib */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		490ECA9D244FFACB003FE804 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +216,7 @@
 		490ECAD9245007D3003FE804 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4904E387245146FD00065AAE /* Custom */,
 				490ECB0C24504196003FE804 /* Post */,
 				490ECADB2450096E003FE804 /* Lottie */,
 				490ECAF424500C82003FE804 /* Home */,
@@ -446,6 +460,7 @@
 				490ECAB6244FFAD0003FE804 /* LaunchScreen.storyboard in Resources */,
 				490ECAEB24500991003FE804 /* user-10.json in Resources */,
 				491664EC2450F02F00E6BA93 /* PostItemTableViewCell.xib in Resources */,
+				4904E38B245148E700065AAE /* HeaderProfile.xib in Resources */,
 				490ECAE924500991003FE804 /* user-4.json in Resources */,
 				490ECAB3244FFAD0003FE804 /* Assets.xcassets in Resources */,
 				490ECAEC24500991003FE804 /* user-5.json in Resources */,
@@ -592,6 +607,7 @@
 				4904E386245134D200065AAE /* UITextField.swift in Sources */,
 				491664E72450EAB200E6BA93 /* PostModel.swift in Sources */,
 				490ECAF8245011B1003FE804 /* HomeItemTableViewCell.swift in Sources */,
+				4904E3892451483C00065AAE /* HeaderProfile.swift in Sources */,
 				490ECAFB245011D5003FE804 /* Lottie.swift in Sources */,
 				491664E52450E69200E6BA93 /* UserPostViewModel.swift in Sources */,
 				490ECAAA244FFACB003FE804 /* AppDelegate.swift in Sources */,
