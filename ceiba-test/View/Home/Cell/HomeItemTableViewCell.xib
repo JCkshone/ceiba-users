@@ -100,8 +100,8 @@
                             <constraint firstItem="Xtr-I0-wg7" firstAttribute="top" secondItem="yiA-hL-vv7" secondAttribute="bottom" constant="5.5" id="zfC-Ex-6lP"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="16"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>

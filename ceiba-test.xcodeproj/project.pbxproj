@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4904E386245134D200065AAE /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E385245134D200065AAE /* UITextField.swift */; };
 		490ECAAA244FFACB003FE804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECAA9244FFACB003FE804 /* AppDelegate.swift */; };
 		490ECAAC244FFACB003FE804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECAAB244FFACB003FE804 /* SceneDelegate.swift */; };
 		490ECAAE244FFACB003FE804 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ECAAD244FFACB003FE804 /* HomeVC.swift */; };
@@ -67,6 +68,7 @@
 		15AEC6879E530B13B13D95F9 /* Pods_ceiba_test_ceiba_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ceiba_test_ceiba_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DF2C76118BC9582D5CC7EC /* Pods-ceiba-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-testTests.debug.xcconfig"; path = "Target Support Files/Pods-ceiba-testTests/Pods-ceiba-testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4904BD677352146BD68C11F1 /* Pods-ceiba-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-test.release.xcconfig"; path = "Target Support Files/Pods-ceiba-test/Pods-ceiba-test.release.xcconfig"; sourceTree = "<group>"; };
+		4904E385245134D200065AAE /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		490ECAA6244FFACB003FE804 /* ceiba-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ceiba-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		490ECAA9244FFACB003FE804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		490ECAAB244FFACB003FE804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				490ECB06245031A9003FE804 /* UIView.swift */,
 				490ECB08245035A5003FE804 /* MKMapView.swift */,
 				490ECB0A24503FF3003FE804 /* UIControl.swift */,
+				4904E385245134D200065AAE /* UITextField.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				490ECAAE244FFACB003FE804 /* HomeVC.swift in Sources */,
 				490ECB0424502A3D003FE804 /* UserViewModel.swift in Sources */,
 				490ECB022450254C003FE804 /* HttpManager.swift in Sources */,
+				4904E386245134D200065AAE /* UITextField.swift in Sources */,
 				491664E72450EAB200E6BA93 /* PostModel.swift in Sources */,
 				490ECAF8245011B1003FE804 /* HomeItemTableViewCell.swift in Sources */,
 				490ECAFB245011D5003FE804 /* Lottie.swift in Sources */,

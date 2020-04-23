@@ -11,6 +11,8 @@ import UIKit
 class HomeVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var search: UITextField!
+    @IBOutlet weak var searchContent: UIView!
     
     private typealias homeCell = HomeItemTableViewCell
     private let viewModel = UserViewModel()
@@ -22,14 +24,21 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.navigationController?.navigationBar.isHidden = true
+        setupView()
         setupTableView()
         setupViewModel()
     }
     
+    @IBAction func change(_ sender: Any) {
+        viewModel.searchUser(from: search.text ?? "")
+    }
+    
     func setupViewModel() {
         viewModel.handleDataLoadComplete = { [unowned self] in
+            self.tableView.reloadData()
+        }
+        
+        viewModel.handleSearchComplete = { [unowned self] in
             self.tableView.reloadData()
         }
         
@@ -49,6 +58,14 @@ extension HomeVC {
     func setupTableView() {
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: Constants.cellName, bundle: Bundle.main), forCellReuseIdentifier: Constants.cellName)
+    }
+    
+    func setupView() {
+        self.navigationController?.navigationBar.isHidden = true
+        self.search.borderStyle = .none
+        self.search.setLeftPaddingPoints(32)
+        self.searchContent.addShadow()
+        self.tableView.keyboardDismissMode = .onDrag
     }
 }
 
