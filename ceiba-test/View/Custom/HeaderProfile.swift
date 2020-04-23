@@ -9,5 +9,26 @@
 import UIKit
 
 class HeaderProfile: UIView {
+    struct Constants {
+        static let xibName = "HeaderProfile"
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadViewFromNib()
+    }
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        loadViewFromNib()
+    }
+
+    private func loadViewFromNib() {
+        let bundle = Bundle.init(for: HeaderProfile.self)
+        if let viewsToAdd = bundle.loadNibNamed(Constants.xibName, owner: self, options: nil), let contentView = viewsToAdd.first as? UIView {
+            addSubview(contentView)
+            contentView.frame = self.bounds
+            contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        }
+    }
 }

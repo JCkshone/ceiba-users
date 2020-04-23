@@ -14,7 +14,7 @@ class UserPostVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private typealias postCell = PostItemTableViewCell
     var viewModel: UserPostViewModel = UserPostViewModel()
-    
+    private var headerView = HeaderProfile()
     
     struct Constants {
         static let cellName = "PostItemTableViewCell"
@@ -52,6 +52,10 @@ extension UserPostVC {
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: Constants.cellName, bundle: Bundle.main), forCellReuseIdentifier: Constants.cellName)
+
+        tableView.contentInset = UIEdgeInsets(top: 260, left: 0, bottom: 0, right: 0)
+        view.addSubview(headerView)
+        headerView.frame = CGRect(x: 0, y: 80, width: view.bounds.width, height: 250)
     }
 }
 
@@ -66,5 +70,11 @@ extension UserPostVC: UITableViewDelegate, UITableViewDataSource {
         cell.title = post.title
         cell.itemDescription = post.body
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = 260 - (scrollView.contentOffset.y + 260)
+        let h = max(0, y)
+        headerView.frame = CGRect(x: 0, y: 100, width: view.bounds.width, height: h)
     }
 }
