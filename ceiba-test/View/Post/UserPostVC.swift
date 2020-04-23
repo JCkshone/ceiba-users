@@ -54,6 +54,10 @@ extension UserPostVC {
     }
     
     func setupProfileHeader() {
+        if let user = viewModel.user {
+            headerView.setUserInfo(of: user)
+        }
+        
         tableView.contentInset = UIEdgeInsets(top: 260, left: 0, bottom: 0, right: 0)
         view.addSubview(headerView)
         headerView.frame = CGRect(x: 0, y: 80, width: view.bounds.width, height: 250)
@@ -71,6 +75,7 @@ extension UserPostVC: UITableViewDelegate, UITableViewDataSource {
         let post = viewModel.posts[indexPath.row]
         cell.title = post.title
         cell.itemDescription = post.body
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -78,5 +83,9 @@ extension UserPostVC: UITableViewDelegate, UITableViewDataSource {
         let y = 260 - (scrollView.contentOffset.y + 260)
         let h = max(0, y)
         headerView.frame = CGRect(x: 0, y: 100, width: view.bounds.width, height: h)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.headerView.alpha = y < 227.0 ? 0 : 1
+        }
     }
 }

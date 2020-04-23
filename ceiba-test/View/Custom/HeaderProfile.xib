@@ -10,6 +10,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderProfile" customModule="ceiba_test" customModuleProvider="target">
             <connections>
                 <outlet property="animationContentView" destination="oqw-bs-twK" id="Ub3-0t-JDz"/>
+                <outlet property="phoneNumber" destination="X1B-sF-vOu" id="JHT-7r-0el"/>
+                <outlet property="userEmail" destination="RVN-3D-NlJ" id="Et7-K2-FXl"/>
+                <outlet property="userName" destination="p6D-sC-OBm" id="Glt-tc-grg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

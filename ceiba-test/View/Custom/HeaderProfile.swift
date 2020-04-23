@@ -11,6 +11,9 @@ import UIKit
 class HeaderProfile: UIView {
     
     @IBOutlet weak var animationContentView: UIView!
+    @IBOutlet fileprivate weak var userName: UILabel!
+    @IBOutlet fileprivate weak var phoneNumber: UILabel!
+    @IBOutlet fileprivate weak var userEmail: UILabel!
     
     private var animation: Lottie = Lottie()
     
@@ -35,6 +38,12 @@ class HeaderProfile: UIView {
             contentView.frame = self.bounds
             contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         }
+    }
+    
+    func setUserInfo(of user: User) {
+        userName.text = user.name
+        userEmail.text = user.email
+        phoneNumber.text = user.phone
     }
     
     func setupAnimationView(animationName: String) {
