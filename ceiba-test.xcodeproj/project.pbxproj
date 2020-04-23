@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4900F0B724520E390028128A /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900F0B624520E390028128A /* EmptyResponse.swift */; };
+		4900F0B924520E940028128A /* EmptyResponse.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4900F0B824520E940028128A /* EmptyResponse.xib */; };
+		4900F0BC245219510028128A /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 4900F0BA245219500028128A /* empty.json */; };
+		4900F0BD245219510028128A /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 4900F0BB245219510028128A /* search.json */; };
 		4904E386245134D200065AAE /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E385245134D200065AAE /* UITextField.swift */; };
 		4904E3892451483C00065AAE /* HeaderProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E3882451483C00065AAE /* HeaderProfile.swift */; };
 		4904E38B245148E700065AAE /* HeaderProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4904E38A245148E700065AAE /* HeaderProfile.xib */; };
@@ -69,6 +73,10 @@
 		0765CDA4FB3B6949F95362BC /* Pods_ceiba_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ceiba_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AEC6879E530B13B13D95F9 /* Pods_ceiba_test_ceiba_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ceiba_test_ceiba_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DF2C76118BC9582D5CC7EC /* Pods-ceiba-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-testTests.debug.xcconfig"; path = "Target Support Files/Pods-ceiba-testTests/Pods-ceiba-testTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4900F0B624520E390028128A /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		4900F0B824520E940028128A /* EmptyResponse.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyResponse.xib; sourceTree = "<group>"; };
+		4900F0BA245219500028128A /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
+		4900F0BB245219510028128A /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
 		4904BD677352146BD68C11F1 /* Pods-ceiba-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-test.release.xcconfig"; path = "Target Support Files/Pods-ceiba-test/Pods-ceiba-test.release.xcconfig"; sourceTree = "<group>"; };
 		4904E385245134D200065AAE /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		4904E3882451483C00065AAE /* HeaderProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProfile.swift; sourceTree = "<group>"; };
@@ -147,9 +155,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4900F0B524520D7F0028128A /* EmptyResponse */ = {
+			isa = PBXGroup;
+			children = (
+				4900F0B624520E390028128A /* EmptyResponse.swift */,
+				4900F0B824520E940028128A /* EmptyResponse.xib */,
+			);
+			path = EmptyResponse;
+			sourceTree = "<group>";
+		};
 		4904E387245146FD00065AAE /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				4900F0B524520D7F0028128A /* EmptyResponse */,
 				490ECADB2450096E003FE804 /* Lottie */,
 				4904E38C2451623700065AAE /* HeaderProfile */,
 			);
@@ -255,6 +273,8 @@
 		490ECADC2450097B003FE804 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				4900F0BA245219500028128A /* empty.json */,
+				4900F0BB245219510028128A /* search.json */,
 				490ECADE24500990003FE804 /* user-1.json */,
 				490ECAE024500990003FE804 /* user-2.json */,
 				490ECAE424500990003FE804 /* user-3.json */,
@@ -465,12 +485,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4900F0B924520E940028128A /* EmptyResponse.xib in Resources */,
 				490ECAB6244FFAD0003FE804 /* LaunchScreen.storyboard in Resources */,
 				490ECAEB24500991003FE804 /* user-10.json in Resources */,
 				491664EC2450F02F00E6BA93 /* PostItemTableViewCell.xib in Resources */,
 				4904E38B245148E700065AAE /* HeaderProfile.xib in Resources */,
 				490ECAE924500991003FE804 /* user-4.json in Resources */,
 				490ECAB3244FFAD0003FE804 /* Assets.xcassets in Resources */,
+				4900F0BC245219510028128A /* empty.json in Resources */,
 				490ECAEC24500991003FE804 /* user-5.json in Resources */,
 				490ECAE724500991003FE804 /* user-8.json in Resources */,
 				490ECAF024500991003FE804 /* user-6.json in Resources */,
@@ -480,6 +502,7 @@
 				490ECAF9245011B1003FE804 /* HomeItemTableViewCell.xib in Resources */,
 				490ECAEE24500991003FE804 /* user-3.json in Resources */,
 				490ECAED24500991003FE804 /* user-9.json in Resources */,
+				4900F0BD245219510028128A /* search.json in Resources */,
 				490ECAEF24500991003FE804 /* user-7.json in Resources */,
 				490ECAEA24500991003FE804 /* user-2.json in Resources */,
 			);
@@ -621,6 +644,7 @@
 				490ECAAA244FFACB003FE804 /* AppDelegate.swift in Sources */,
 				490ECAFF245024AD003FE804 /* UserModel.swift in Sources */,
 				490ECB07245031A9003FE804 /* UIView.swift in Sources */,
+				4900F0B724520E390028128A /* EmptyResponse.swift in Sources */,
 				490ECB0B24503FF3003FE804 /* UIControl.swift in Sources */,
 				491664EB2450F02F00E6BA93 /* PostItemTableViewCell.swift in Sources */,
 				490ECB0E245041B7003FE804 /* UserPostVC.swift in Sources */,

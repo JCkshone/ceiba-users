@@ -16,6 +16,8 @@ class HomeVC: UIViewController {
     
     private typealias homeCell = HomeItemTableViewCell
     private let viewModel = UserViewModel()
+    private var emptyView = EmptyResponse()
+    private var emptyShow = false
     
     struct Constants {
         static let cellName = "HomeItemTableViewCell"
@@ -39,6 +41,13 @@ class HomeVC: UIViewController {
         }
         
         viewModel.handleSearchComplete = { [unowned self] in
+            if self.viewModel.users.count == 0 {
+                if !self.emptyView.isDescendant(of: self.view) {
+                    self.setupAnimation()
+                }
+            } else {
+                self.emptyView.removeFromSuperview()
+            }
             self.tableView.reloadData()
         }
         
@@ -62,16 +71,22 @@ extension HomeVC {
     
     func setupView() {
         self.navigationController?.navigationBar.isHidden = true
-        self.search.borderStyle = .none
-        self.search.setLeftPaddingPoints(32)
-        self.searchContent.addShadow()
-        self.tableView.keyboardDismissMode = .onDrag
+        search.borderStyle = .none
+        search.setLeftPaddingPoints(32)
+        searchContent.addShadow()
+        tableView.keyboardDismissMode = .onDrag
+    }
+    
+    func setupAnimation() {
+        emptyView = EmptyResponse()
+        emptyView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height / 7, width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height / 3))
+        self.view.addSubview(self.emptyView)
     }
 }
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.users.count
+        return viewModel.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
