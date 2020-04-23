@@ -10,6 +10,7 @@ import UIKit
 
 class UserPostVC: UIViewController {
     
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     private typealias postCell = PostItemTableViewCell
     var viewModel: UserPostViewModel = UserPostViewModel()
@@ -42,7 +43,10 @@ class UserPostVC: UIViewController {
 }
 
 extension UserPostVC {
+    
     func setupView() {
+        userName.text = viewModel.user?.name
+        userName.alpha = 0
     }
     
     func setupTableView() {
@@ -86,6 +90,7 @@ extension UserPostVC: UITableViewDelegate, UITableViewDataSource {
         
         UIView.animate(withDuration: 0.3) {
             self.headerView.alpha = y < 227.0 ? 0 : 1
+            self.userName.alpha = y < 227.0 ? 1 : 0
         }
     }
 }

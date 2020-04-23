@@ -111,7 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hEy-FU-WdA">
-                                <rect key="frame" x="0.0" y="86" width="414" height="776"/>
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="773.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                 <connections>
@@ -133,13 +133,22 @@
                                     <action selector="backAction:" destination="Vwl-2c-vvW" eventType="touchUpInside" id="yfg-7l-Yzr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWi-LQ-6vw">
+                                <rect key="frame" x="42" y="52" width="356" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="21"/>
+                                <color key="textColor" red="0.039215686270000001" green="0.10980392160000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="IWi-LQ-6vw" firstAttribute="top" secondItem="ItZ-wn-Lhs" secondAttribute="top" constant="8" id="4yh-ru-Lfd"/>
                             <constraint firstItem="ItZ-wn-Lhs" firstAttribute="bottom" secondItem="hEy-FU-WdA" secondAttribute="bottom" id="9c7-Bx-nTj"/>
                             <constraint firstItem="eGF-IT-o8V" firstAttribute="top" secondItem="ItZ-wn-Lhs" secondAttribute="top" constant="11" id="E2R-JA-TV3"/>
+                            <constraint firstItem="IWi-LQ-6vw" firstAttribute="leading" secondItem="eGF-IT-o8V" secondAttribute="trailing" constant="8" id="Kfl-HL-fbE"/>
                             <constraint firstItem="eGF-IT-o8V" firstAttribute="leading" secondItem="ItZ-wn-Lhs" secondAttribute="leading" constant="16" id="Rxh-gE-qvQ"/>
-                            <constraint firstItem="hEy-FU-WdA" firstAttribute="top" secondItem="eGF-IT-o8V" secondAttribute="bottom" constant="5.5" id="ahF-Eu-BSD"/>
+                            <constraint firstItem="ItZ-wn-Lhs" firstAttribute="trailing" secondItem="IWi-LQ-6vw" secondAttribute="trailing" constant="16" id="Y1c-Pi-fDb"/>
+                            <constraint firstItem="hEy-FU-WdA" firstAttribute="top" secondItem="eGF-IT-o8V" secondAttribute="bottom" constant="8" id="ahF-Eu-BSD"/>
                             <constraint firstItem="hEy-FU-WdA" firstAttribute="leading" secondItem="ItZ-wn-Lhs" secondAttribute="leading" id="pMm-Jm-LfC"/>
                             <constraint firstItem="ItZ-wn-Lhs" firstAttribute="trailing" secondItem="hEy-FU-WdA" secondAttribute="trailing" id="yZ2-dx-5uj"/>
                         </constraints>
@@ -147,6 +156,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="hEy-FU-WdA" id="Jha-lx-LCm"/>
+                        <outlet property="userName" destination="IWi-LQ-6vw" id="PT0-CW-TN6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khb-f5-Uv2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
