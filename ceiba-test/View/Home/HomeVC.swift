@@ -15,9 +15,10 @@ class HomeVC: UIViewController {
     @IBOutlet weak var searchContent: UIView!
     
     private typealias homeCell = HomeItemTableViewCell
-    private let viewModel = UserViewModel()
+    private var viewModel: UserViewModel!
     private var emptyView = EmptyResponse()
     private var emptyShow = false
+    
     
     struct Constants {
         static let cellName = "HomeItemTableViewCell"
@@ -26,6 +27,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = UserViewModel(appDelegate: (UIApplication.shared.delegate as? AppDelegate)!)
         setupView()
         setupTableView()
         setupViewModel()

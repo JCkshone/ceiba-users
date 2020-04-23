@@ -11,6 +11,8 @@
 		4900F0B924520E940028128A /* EmptyResponse.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4900F0B824520E940028128A /* EmptyResponse.xib */; };
 		4900F0BC245219510028128A /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 4900F0BA245219500028128A /* empty.json */; };
 		4900F0BD245219510028128A /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 4900F0BB245219510028128A /* search.json */; };
+		4900F0C024522CE90028128A /* UserCoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4900F0BE24522CE90028128A /* UserCoreModel.xcdatamodeld */; };
+		4900F0C224522DE20028128A /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900F0C124522DE20028128A /* CoreManager.swift */; };
 		4904E386245134D200065AAE /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E385245134D200065AAE /* UITextField.swift */; };
 		4904E3892451483C00065AAE /* HeaderProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E3882451483C00065AAE /* HeaderProfile.swift */; };
 		4904E38B245148E700065AAE /* HeaderProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4904E38A245148E700065AAE /* HeaderProfile.xib */; };
@@ -77,6 +79,8 @@
 		4900F0B824520E940028128A /* EmptyResponse.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyResponse.xib; sourceTree = "<group>"; };
 		4900F0BA245219500028128A /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		4900F0BB245219510028128A /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
+		4900F0BF24522CE90028128A /* UserCoreModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserCoreModel.xcdatamodel; sourceTree = "<group>"; };
+		4900F0C124522DE20028128A /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
 		4904BD677352146BD68C11F1 /* Pods-ceiba-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ceiba-test.release.xcconfig"; path = "Target Support Files/Pods-ceiba-test/Pods-ceiba-test.release.xcconfig"; sourceTree = "<group>"; };
 		4904E385245134D200065AAE /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		4904E3882451483C00065AAE /* HeaderProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProfile.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				490ECAB2244FFAD0003FE804 /* Assets.xcassets */,
 				490ECAB4244FFAD0003FE804 /* LaunchScreen.storyboard */,
 				490ECAB7244FFAD0003FE804 /* Info.plist */,
+				4900F0BE24522CE90028128A /* UserCoreModel.xcdatamodeld */,
 			);
 			path = "ceiba-test";
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				490ECB012450254C003FE804 /* HttpManager.swift */,
+				4900F0C124522DE20028128A /* CoreManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -632,9 +638,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4900F0C024522CE90028128A /* UserCoreModel.xcdatamodeld in Sources */,
 				490ECAAE244FFACB003FE804 /* HomeVC.swift in Sources */,
 				490ECB0424502A3D003FE804 /* UserViewModel.swift in Sources */,
 				490ECB022450254C003FE804 /* HttpManager.swift in Sources */,
+				4900F0C224522DE20028128A /* CoreManager.swift in Sources */,
 				4904E386245134D200065AAE /* UITextField.swift in Sources */,
 				491664E72450EAB200E6BA93 /* PostModel.swift in Sources */,
 				490ECAF8245011B1003FE804 /* HomeItemTableViewCell.swift in Sources */,
@@ -970,6 +978,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4900F0BE24522CE90028128A /* UserCoreModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4900F0BF24522CE90028128A /* UserCoreModel.xcdatamodel */,
+			);
+			currentVersion = 4900F0BF24522CE90028128A /* UserCoreModel.xcdatamodel */;
+			path = UserCoreModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 490ECA9E244FFACB003FE804 /* Project object */;
 }

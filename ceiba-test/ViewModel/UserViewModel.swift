@@ -10,21 +10,57 @@ import Foundation
 
 class UserViewModel {
     private let http = HttpManager.shareInstance
+    private var coreManager: CoreManager!
+    
     var users: [User] = []
     var filterUsers: [User] = []
     var handleDataLoadComplete: (()->())?
     var handleSearchComplete: (()->())?
+    var userEntities: [UserEntity] = []
+    
+    init(appDelegate: AppDelegate) {
+        coreManager = CoreManager(delegate: appDelegate)
+    }
+    
     
     struct Constants {
         static let userPath = "users"
     }
     
-    func loadUsers() {
+    private func load() {
         http.getUsers(from: Constants.userPath) { users in
             self.users = users
             self.filterUsers = users
             self.handleDataLoadComplete?()
+            self.coreManager.createData(users: users)
         }
+    }
+    
+    func loadUsers() {
+        let items = coreManager.getAll()
+        if items.count == 0 {
+            load()
+            return
+        }
+        
+        items.forEach { item in
+            guard
+                let lat   = item["lat"] as? String,
+                let lng   = item["lng"] as? String,
+                let id    = item["id"] as? Int,
+                let name  = item["name"] as? String,
+                let phone = item["phone"] as? String,
+                let email = item["email"] as? String
+                else { return }
+            
+            
+            let geo = Geo(lat: lat, lng: lng)
+            let address = Address(street: "", suite: "", city: "", zipcode: "", geo: geo)
+            
+            users.append(User(id: id, name: name, username: "", email: email, address: address, phone: phone, website: "", company: nil))
+        }
+        
+        handleDataLoadComplete?()
     }
     
     func getUser(from userId: Int) -> User? {

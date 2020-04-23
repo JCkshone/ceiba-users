@@ -16,7 +16,7 @@ struct User: Decodable {
     let address: Address
     let phone: String
     let website: String
-    let company: Company
+    let company: Company?
     
     enum CondingKeys: String, CodingKey {
         case id
