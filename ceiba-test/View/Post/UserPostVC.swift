@@ -10,7 +10,6 @@ import UIKit
 
 class UserPostVC: UIViewController {
     
-    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     private typealias postCell = PostItemTableViewCell
     var viewModel: UserPostViewModel = UserPostViewModel()
@@ -25,6 +24,7 @@ class UserPostVC: UIViewController {
         setupView()
         setupTableView()
         initViewModel()
+        setupProfileHeader()
     }
 
     @IBAction func backAction(_ sender: Any) {
@@ -43,7 +43,6 @@ class UserPostVC: UIViewController {
 
 extension UserPostVC {
     func setupView() {
-        userName.text = viewModel.user?.name
     }
     
     func setupTableView() {
@@ -52,10 +51,13 @@ extension UserPostVC {
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: Constants.cellName, bundle: Bundle.main), forCellReuseIdentifier: Constants.cellName)
-
+    }
+    
+    func setupProfileHeader() {
         tableView.contentInset = UIEdgeInsets(top: 260, left: 0, bottom: 0, right: 0)
         view.addSubview(headerView)
         headerView.frame = CGRect(x: 0, y: 80, width: view.bounds.width, height: 250)
+        headerView.setupAnimationView(animationName: "user-1")
     }
 }
 

@@ -9,6 +9,11 @@
 import UIKit
 
 class HeaderProfile: UIView {
+    
+    @IBOutlet weak var animationContentView: UIView!
+    
+    private var animation: Lottie = Lottie()
+    
     struct Constants {
         static let xibName = "HeaderProfile"
     }
@@ -30,5 +35,11 @@ class HeaderProfile: UIView {
             contentView.frame = self.bounds
             contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         }
+    }
+    
+    func setupAnimationView(animationName: String) {
+        animation.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 32, height: animationContentView.bounds.height)
+        animationContentView.addSubview(animation)
+        animation.setupAnimation(animationName)
     }
 }
