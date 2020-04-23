@@ -150,10 +150,19 @@
 		4904E387245146FD00065AAE /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				490ECADB2450096E003FE804 /* Lottie */,
+				4904E38C2451623700065AAE /* HeaderProfile */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		4904E38C2451623700065AAE /* HeaderProfile */ = {
+			isa = PBXGroup;
+			children = (
 				4904E3882451483C00065AAE /* HeaderProfile.swift */,
 				4904E38A245148E700065AAE /* HeaderProfile.xib */,
 			);
-			path = Custom;
+			path = HeaderProfile;
 			sourceTree = "<group>";
 		};
 		490ECA9D244FFACB003FE804 = {
@@ -218,7 +227,6 @@
 			children = (
 				4904E387245146FD00065AAE /* Custom */,
 				490ECB0C24504196003FE804 /* Post */,
-				490ECADB2450096E003FE804 /* Lottie */,
 				490ECAF424500C82003FE804 /* Home */,
 				490ECAF124500A3F003FE804 /* Main.storyboard */,
 			);
