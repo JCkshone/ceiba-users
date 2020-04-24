@@ -23,13 +23,11 @@ class EmptyResponse: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib()
-        initView()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib()
-        initView()
     }
 
     private func loadViewFromNib() {
@@ -41,9 +39,10 @@ class EmptyResponse: UIView {
         }
     }
     
-    func initView() {
+    func setupView(animationName: String? = Constants.animation){
+        guard let animationName = animationName else { return }
         animation.frame = CGRect(x: 0, y: 0, width: animationContent.bounds.width, height: 200)
         animationContent.addSubview(animation)
-        animation.setupAnimation(Constants.animation)
+        animation.setupAnimation(animationName)
     }
 }

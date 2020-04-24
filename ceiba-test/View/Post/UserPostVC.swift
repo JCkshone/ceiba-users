@@ -13,8 +13,9 @@ class UserPostVC: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     private typealias postCell = PostItemTableViewCell
-    var viewModel: UserPostViewModel = UserPostViewModel()
     private var headerView = HeaderProfile()
+    private var spinner = UIActivityIndicatorView(style: .medium)
+    var viewModel: UserPostViewModel = UserPostViewModel()
     
     struct Constants {
         static let cellName = "PostItemTableViewCell"
@@ -33,8 +34,12 @@ class UserPostVC: UIViewController {
     }
     
     func initViewModel() {
+        setupAnimation()
         viewModel.handleDataLoadComplete = { [unowned self] in
-            self.tableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.spinner.removeFromSuperview()
+                self.tableView.reloadData()
+            }
         }
         
         viewModel.loadUserPost()
@@ -65,7 +70,7 @@ extension UserPostVC {
         tableView.contentInset = UIEdgeInsets(top: 260, left: 0, bottom: 0, right: 0)
         view.addSubview(headerView)
         headerView.frame = CGRect(x: 0, y: 80, width: view.bounds.width, height: 250)
-        headerView.setupAnimationView(animationName: "user-1")
+        headerView.setupAnimationView(animationName: "user-\(Int.random(in: 1 ... 10))")
     }
 }
 
@@ -91,6 +96,18 @@ extension UserPostVC: UITableViewDelegate, UITableViewDataSource {
         UIView.animate(withDuration: 0.3) {
             self.headerView.alpha = y < 227.0 ? 0 : 1
             self.userName.alpha = y < 227.0 ? 1 : 0
+        }
+    }
+    
+    func setupAnimation() {
+        UIView.animate(withDuration: 0.3) {
+            self.spinner.translatesAutoresizingMaskIntoConstraints = false
+            self.spinner.startAnimating()
+            self.spinner.frame = self.view.bounds
+            self.spinner.color = #colorLiteral(red: 0.03921568627, green: 0.1098039216, blue: 0.1882352941, alpha: 1)
+            self.view.addSubview(self.spinner)
+            self.spinner.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            self.spinner.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         }
     }
 }

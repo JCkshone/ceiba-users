@@ -17,8 +17,6 @@ class HomeVC: UIViewController {
     private typealias homeCell = HomeItemTableViewCell
     private var viewModel: UserViewModel!
     private var emptyView = EmptyResponse()
-    private var emptyShow = false
-    
     
     struct Constants {
         static let cellName = "HomeItemTableViewCell"
@@ -81,6 +79,7 @@ extension HomeVC {
     
     func setupAnimation() {
         emptyView = EmptyResponse()
+        emptyView.setupView()
         emptyView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height / 7, width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height / 3))
         self.view.addSubview(self.emptyView)
     }
