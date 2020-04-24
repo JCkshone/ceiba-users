@@ -56,8 +56,10 @@ class UserViewModel {
             
             let geo = Geo(lat: lat, lng: lng)
             let address = Address(street: "", suite: "", city: "", zipcode: "", geo: geo)
+            let user = User(id: id, name: name, username: "", email: email, address: address, phone: phone, website: "", company: nil)
             
-            users.append(User(id: id, name: name, username: "", email: email, address: address, phone: phone, website: "", company: nil))
+            filterUsers.append(user)
+            users.append(user)
         }
         
         handleDataLoadComplete?()

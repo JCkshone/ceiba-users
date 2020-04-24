@@ -51,9 +51,13 @@ class CoreManager {
             let result = try managedContext.fetch(fetchRequest)
             
             for data in result as! [NSManagedObject] {
-                if let item = data as? [String: Any] {
-                    items.append(item)
+                var dic: [String: Any] = [:]
+                for attribute in data.entity.attributesByName {
+                    if let value = data.value(forKey: attribute.key) {
+                        dic[attribute.key] = value
+                    }
                 }
+                items.append(dic)
             }
         } catch {
             print("Failed")
